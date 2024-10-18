@@ -127,7 +127,5 @@ def writing (extracted_data):
 def main():
     data = setup()
     extracted_data = iterate(data)
-    for i in extracted_data:
-        print(i)
     writing(extracted_data)
 main()
