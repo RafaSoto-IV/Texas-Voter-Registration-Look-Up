@@ -7,13 +7,38 @@ from selenium.common.exceptions import TimeoutException
 import os
 import chromedriver_autoinstaller
 import openpyxl
-from openpyxl.styles import PatternFill
+from openpyxl.styles import Font
 import pandas as pd
 from datetime import datetime
 
-direct = os.getcwd() + '\DUMMY LWV Student Voter data.xlsx'
 
-def setup():
+def file_selection():
+    direct = os.getcwd()
+    excel_files = []
+    print("Excel Files Found:")
+    index = 0
+    for filename in os.listdir(direct):
+        if filename.endswith('.xlsx') or filename.endswith('.xls'):
+            excel_files.append(filename)
+            print("[" + str(index) + "] " + filename)
+            index += 1
+
+    while True:
+        try:
+            print("Please enter the number associated with the file you would like to use: ")
+            file_index = input()
+            direct = os.getcwd() + "\\" + str(excel_files[int(file_index)])
+        except ValueError:
+            print("Invalid input.")
+        except IndexError:
+            print("Number is not in range.")
+        else:
+            break
+
+    return direct
+
+
+def setup(direct):
     # Step 1: Load the Excel file (for reading)
     workbook = openpyxl.load_workbook(direct)
     df = pd.read_excel(direct, usecols=['First Name', 'Last Name', 'DOB', 'County', 'ZIP', 'Status'])
@@ -51,6 +76,7 @@ def setup():
         data.append(row_data)
     return data
 
+
 def iterate(data):
     # Go to Website.
     chromedriver_autoinstaller.install()
@@ -66,7 +92,6 @@ def iterate(data):
             dob = data[index][2]
             county = data[index][3]
             zip_code = data[index][4]
-
 
             selection_criteria = driver.find_element(By.NAME, 'selType')
             selection_criteria.send_keys('n')
@@ -90,7 +115,6 @@ def iterate(data):
 
                 alert = driver.switch_to.alert
                 alert.accept()
-                #print("alert accepted")
             except TimeoutException:
                 print()
 
@@ -104,28 +128,33 @@ def iterate(data):
             elements = driver.find_elements(By.TAG_NAME, 'span')
             for element in elements:
                 if element.text == 'Voter Status: ACTIVE':
-                    data[index][5] = 'Y'
-
+                    data[index][5] = 'V'
 
         index += 1
+
     return data
 
-def writing (extracted_data):
+
+def writing (extracted_data, direct):
     workbook = openpyxl.load_workbook(direct)
     sheet = workbook.active
-    green_background = PatternFill(start_color='93c47d', end_color='93c47d', fill_type = "solid")
+    green_font = Font(bold=True, color="34a853")
     index = 2
     index_offset = 2
     while index <= len(extracted_data) + 1:
         sheet['A' + str(index)] = str(extracted_data[index - index_offset][5])
-        if str(extracted_data[index - index_offset][5]) == 'Y':
+        if str(extracted_data[index - index_offset][5]) == 'V':
             for cell in sheet[str(index) + ':' + str(index)]:
-                cell.fill = green_background
+                cell.font = green_font
         index += 1
     workbook.save(direct)
 
+
 def main():
-    data = setup()
+    direct = file_selection()
+    data = setup(direct)
     extracted_data = iterate(data)
-    writing(extracted_data)
+    writing(extracted_data, direct)
+
+
 main()
