@@ -51,16 +51,22 @@ def setup(direct):
         if str(row['First Name']).lower() != 'nat' and str(row['First Name']).lower() != '' and str(row['First Name']).lower() != 'nan':
             dob_variable = str(row['DOB']).replace(" 00:00:00", "")
             dob_string = ''
-
-            date_object = datetime.strptime(dob_variable, "%Y-%m-%d")
-            dob_string = date_object.strftime("%m/%d/%Y")
+            while True:
+                try:
+                    date_object = datetime.strptime(dob_variable, "%Y-%m-%d")
+                    dob_string = date_object.strftime("%m/%d/%Y")
+                except ValueError:
+                    dob_string = dob_variable
+                    break
+                else:
+                    break
 
             row_data = [
                 str(row['First Name']), # First name
                 str(row['Last Name']),  # Last name
                 dob_string,  # Date of Birth
                 str(row['County']),  # County
-                str(int(row['ZIP'])), # Zip code
+                str(row['ZIP']), # Zip code
                 str(row['Status']) # Status
             ]
 
@@ -109,7 +115,7 @@ def iterate(data):
             submit_button = driver.find_element(By.ID, 'VALIDBTN')
             submit_button.click()
             try:
-                WebDriverWait(driver, .5).until(EC.alert_is_present(),
+                WebDriverWait(driver, 1).until(EC.alert_is_present(),
                                                 'Timed out waiting for PA creation ' +
                                                 'confirmation popup to appear.')
 

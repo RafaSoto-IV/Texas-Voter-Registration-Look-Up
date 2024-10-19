@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53de5494-ccc8-4d26-95f8-5566466d73dd" name="Changes" comment="Redid Pyinstaller for previous changes">
-      <change afterPath="$PROJECT_DIR$/DUMMY LWV Student Voter data (1).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DUMMY LWV Student Voter data (2).xlsx" afterDir="false" />
+    <list default="true" id="53de5494-ccc8-4d26-95f8-5566466d73dd" name="Changes" comment="Added input and input error checker. Changed voter registration variable from 'Y' to 'V'. Changed the row background from turning green to the font turning green and bold.">
+      <change afterPath="$PROJECT_DIR$/Student Voter data Williamson Corrected.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DUMMY LWV Student Voter data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/DUMMY LWV Student Voter data.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Voter_Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Voter_Registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/Voter_Registration.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/Voter_Registration.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/warn-Voter_Registration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/warn-Voter_Registration.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Voter_Registration.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Voter_Registration.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +29,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.Voter Registration.executor": "Run",
-    "Python.Voter_Registration.executor": "Run",
-    "Python.main.executor": "Run",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Voter Registration.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Voter_Registration.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.Voter_Registration">
     <configuration name="Voter_Registration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Texas-Voter-Registration-Look-Up" />
@@ -129,13 +121,22 @@
       <option name="project" value="LOCAL" />
       <updated>1729277957018</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added input and input error checker. Changed voter registration variable from 'Y' to 'V'. Changed the row background from turning green to the font turning green and bold.">
+      <option name="closed" value="true" />
+      <created>1729281855591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729281855591</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Getting Rid of Print Statements" />
     <MESSAGE value="Redid Pyinstaller for previous changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redid Pyinstaller for previous changes" />
+    <MESSAGE value="Added input and input error checker. Changed voter registration variable from 'Y' to 'V'. Changed the row background from turning green to the font turning green and bold." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added input and input error checker. Changed voter registration variable from 'Y' to 'V'. Changed the row background from turning green to the font turning green and bold." />
   </component>
 </project>
