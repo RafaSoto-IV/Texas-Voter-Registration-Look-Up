@@ -4,12 +4,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
 import os
 import chromedriver_autoinstaller
 import openpyxl
 from openpyxl.styles import Font
 import pandas as pd
 from datetime import datetime
+import time
 
 
 def file_selection():
@@ -86,8 +89,9 @@ def setup(direct):
 def iterate(data):
     # Go to Website.
     chromedriver_autoinstaller.install()
+    time.sleep(1)
     driver = webdriver.Chrome()
-    y = 0
+    time.sleep(1)
     index = 0
     while index < len(data):
         if str(data[index][0]).lower() != 'nat' and str(data[index][0]).lower() != '' and str(data[index][0]).lower() != "nan":
@@ -99,21 +103,26 @@ def iterate(data):
             county = data[index][3]
             zip_code = data[index][4]
 
-            selection_criteria = driver.find_element(By.NAME, 'selType')
-            selection_criteria.send_keys('n')
-            first_name_box = driver.find_element(By.NAME, 'firstName')
+            '''selection_criteria = driver.find_element(By.NAME, 'selType')
+            selection_criteria.send_keys('n')'''
+            first_name_box = driver.find_element(By.ID, 'mat-input-0')
             first_name_box.send_keys(first_name)
-            last_name_box = driver.find_element(By.NAME, 'lastName')
+            last_name_box = driver.find_element(By.ID, 'mat-input-1')
             last_name_box.send_keys(last_name)
-            county_box = driver.find_element(By.NAME, 'county')
-            county_box.send_keys(county)
-            dob_box = driver.find_element(By.NAME, 'dob')
+            dob_box = driver.find_element(By.ID, 'dtBirth')
             dob_box.send_keys(dob)
-            zip_code_box = driver.find_element(By.NAME, 'adZip5')
+            selection_criteria_box = driver.find_element(By.XPATH, '/html/body/ivis-mvp-root/ivis-mvp-header/div/mat-sidenav-container/mat-sidenav-content/ivis-mvp-landing/div/div/div[2]/div/form/div/div[5]/mat-form-field/div[1]/div/div[2]/mat-select')
+            selection_criteria_box.click
+            selection_criteria_box.send_keys(Keys.ENTER)
+            selection_criteria_box.send_keys(Keys.ENTER)
+            zip_code_box = driver.find_element(By.ID, 'mat-input-3')
             zip_code_box.send_keys(zip_code)
+            county_box = driver.find_element(By.ID, 'mat-input-4')
+            county_box.send_keys(county)
+            county_box.send_keys(Keys.ENTER)
+            submit_button = driver.find_elements(By.TAG_NAME, 'button')
+            submit_button[-1].click()
 
-            submit_button = driver.find_element(By.ID, 'VALIDBTN')
-            submit_button.click()
             try:
                 WebDriverWait(driver, 1).until(EC.alert_is_present(),
                                                 'Timed out waiting for PA creation ' +
@@ -124,18 +133,20 @@ def iterate(data):
             except TimeoutException:
                 print()
 
-            '''print('First Name: ' + str(row[0]))
-            print('Last Name: ' + str(row[1]))
-            print('DOB: ' + str(row[2]))
-            print('County: ' + str(row[3]))
-            print('ZIP: ' + str(row[4]))
-            print('Status: ' + str(row[5]))'''
-
-            elements = driver.find_elements(By.TAG_NAME, 'span')
+            '''elements = driver.find_elements(By.TAG_NAME, 'span')
             for element in elements:
-                if element.text == 'Voter Status: ACTIVE':
+                if element.text == 'ACTIVE':
                     data[index][5] = 'V'
-
+                    print('PASS')'''
+            try:
+                status = driver.find_element(By.XPATH, '/html/body/ivis-mvp-root/ivis-mvp-header/div/mat-sidenav-container/mat-sidenav-content/ivis-mvp-voter-dashboard/ivis-mvp-voter-registration-review/mat-card/mat-card-content/div/ivis-mvp-voter-general-information/section/div[1]/div[4]/div/ivis-mvp-registration-detail-card[2]/div/span')
+                if status.text == 'Active':
+                    data[index][5] = 'V'
+                    print(str(data[index][0]) + " " + str(data[index][1]) + ": Active")
+                else:
+                    print(str(data[index][0]) + " " + str(data[index][1]) + ": Not Active")
+            except NoSuchElementException:
+                print(str(data[index][0]) + " " + str(data[index][1]) + ": Not Registered")
         index += 1
 
     return data

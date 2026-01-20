@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53de5494-ccc8-4d26-95f8-5566466d73dd" name="Changes" comment="Added input and input error checker. Changed voter registration variable from 'Y' to 'V'. Changed the row background from turning green to the font turning green and bold.">
-      <change afterPath="$PROJECT_DIR$/Student Voter data Williamson Corrected.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Voter_Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Voter_Registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/Voter_Registration.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/Voter_Registration.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/warn-Voter_Registration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/warn-Voter_Registration.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/xref-Voter_Registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/xref-Voter_Registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Voter_Registration.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Voter_Registration.exe" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,10 +26,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 7
-}</component>
   <component name="ProjectId" id="2nccdaUjzAf4hh1tjPRHG3ZvF04" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -29,19 +34,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.Voter Registration.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Voter_Registration.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Python.Voter_Registration">
     <configuration name="Voter_Registration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Texas-Voter-Registration-Look-Up" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -63,7 +70,6 @@
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Texas-Voter-Registration-Look-Up" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -96,7 +102,10 @@
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="53de5494-ccc8-4d26-95f8-5566466d73dd" name="Changes" comment="" />
@@ -131,6 +140,17 @@
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
