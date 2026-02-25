@@ -118,6 +118,7 @@ def iterate(data):
             #time.sleep(x)
             dob_box.send_keys(dob)
             selection_criteria_box = driver.find_element(By.XPATH, '/html/body/ivis-mvp-root/ivis-mvp-header/div/mat-sidenav-container/mat-sidenav-content/ivis-mvp-landing/div/div/div[2]/div/form/div/div[6]/mat-form-field/div[1]/div/div[1]/div[2]/label/mat-label')
+            time.sleep(x)
             selection_criteria_box.click()
 
             county_zip_code_option_box = driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div/div/mat-option[1]/span')
@@ -176,6 +177,7 @@ def writing (extracted_data, direct):
     index_offset = 2
     while index <= len(extracted_data) + 1:
         sheet['A' + str(index)] = str(extracted_data[index - index_offset][5])
+        #print("Index = " + str(index) + "V or F = " + str(extracted_data[index - index_offset][5]))
         if str(extracted_data[index - index_offset][5]) == 'V':
             for cell in sheet[str(index) + ':' + str(index)]:
                 cell.font = green_font
