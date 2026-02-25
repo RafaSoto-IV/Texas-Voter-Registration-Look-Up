@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53de5494-ccc8-4d26-95f8-5566466d73dd" name="Changes" comment="Added input and input error checker. Changed voter registration variable from 'Y' to 'V'. Changed the row background from turning green to the font turning green and bold.">
-      <change beforePath="$PROJECT_DIR$/Voter_Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Voter_Registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/PYZ-00.pyz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/PYZ-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/Voter_Registration.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/Voter_Registration.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/base_library.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/warn-Voter_Registration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/warn-Voter_Registration.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Voter_Registration/xref-Voter_Registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/Voter_Registration/xref-Voter_Registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Voter_Registration.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Voter_Registration.exe" afterDir="false" />
-    </list>
+    <list default="true" id="53de5494-ccc8-4d26-95f8-5566466d73dd" name="Changes" comment="Added input and input error checker. Changed voter registration variable from 'Y' to 'V'. Changed the row background from turning green to the font turning green and bold." />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +134,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

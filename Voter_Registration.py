@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import service
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -102,25 +103,40 @@ def iterate(data):
             dob = data[index][2]
             county = data[index][3]
             zip_code = data[index][4]
+            x = .3
+        
 
             '''selection_criteria = driver.find_element(By.NAME, 'selType')
             selection_criteria.send_keys('n')'''
             first_name_box = driver.find_element(By.ID, 'mat-input-0')
+            #time.sleep(x)
             first_name_box.send_keys(first_name)
             last_name_box = driver.find_element(By.ID, 'mat-input-1')
+            #time.sleep(x)
             last_name_box.send_keys(last_name)
             dob_box = driver.find_element(By.ID, 'dtBirth')
+            #time.sleep(x)
             dob_box.send_keys(dob)
-            selection_criteria_box = driver.find_element(By.XPATH, '/html/body/ivis-mvp-root/ivis-mvp-header/div/mat-sidenav-container/mat-sidenav-content/ivis-mvp-landing/div/div/div[2]/div/form/div/div[5]/mat-form-field/div[1]/div/div[2]/mat-select')
-            selection_criteria_box.click
-            selection_criteria_box.send_keys(Keys.ENTER)
-            selection_criteria_box.send_keys(Keys.ENTER)
-            zip_code_box = driver.find_element(By.ID, 'mat-input-3')
+            selection_criteria_box = driver.find_element(By.XPATH, '/html/body/ivis-mvp-root/ivis-mvp-header/div/mat-sidenav-container/mat-sidenav-content/ivis-mvp-landing/div/div/div[2]/div/form/div/div[6]/mat-form-field/div[1]/div/div[1]/div[2]/label/mat-label')
+            selection_criteria_box.click()
+
+            county_zip_code_option_box = driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div/div/mat-option[1]/span')
+            #print("Element is visible? " + str(selection_criteria_box.is_displayed()))
+            time.sleep(x)
+            #ActionChains(driver).move_to_element(selection_criteria_box).click(selection_criteria_box).perform()
+            county_zip_code_option_box.click()
+            time.sleep(x)
+            zip_code_box = driver.find_element(By.XPATH, '/html/body/ivis-mvp-root/ivis-mvp-header/div/mat-sidenav-container/mat-sidenav-content/ivis-mvp-landing/div/div/div[2]/div/form/div/div[9]/div[1]/mat-form-field/div[1]/div/div[2]/input')
+            #time.sleep(x)
             zip_code_box.send_keys(zip_code)
-            county_box = driver.find_element(By.ID, 'mat-input-4')
+            county_box = driver.find_element(By.XPATH, '/html/body/ivis-mvp-root/ivis-mvp-header/div/mat-sidenav-container/mat-sidenav-content/ivis-mvp-landing/div/div/div[2]/div/form/div/div[9]/div[2]/mat-form-field/div[1]/div/div[2]/div/input')
+            #time.sleep(x)
             county_box.send_keys(county)
+            time.sleep(x)
             county_box.send_keys(Keys.ENTER)
+            #time.sleep(x)
             submit_button = driver.find_elements(By.TAG_NAME, 'button')
+            #time.sleep(x)
             submit_button[-1].click()
 
             try:
